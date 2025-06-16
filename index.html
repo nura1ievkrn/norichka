@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Менің сүйікті Норичкама ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    UPLOADCARE_PUBLIC_KEY = '0d7b94752846953b9908';
+  </script>
+  <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    .slideshow {
+      width: 600px;  /* 8 дюймов * 75 пикс/дюйм */
+      height: 900px; /* 12 дюймов * 75 пикс/дюйм */
+      position: relative;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 15px;
+    }
+    .slideshow img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slideshow img.active {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="happy-birthday.mp3" type="audio/mpeg">
+    Бұл браузер аудионы қолдамайды.
+  </audio>
+
+  <div class="container">
+    <h1>Менің сүйікті Норичкама ❤️</h1>
+    <p class="text">
+      <strong>Туған күніңмен, балапаным!</strong><br />
+      Норичкам менің, сенің әр күлгенің, әр сәт еркелегенің — мен үшін ең үлкен бақыт.<br />
+      Жаным, мен әрдайым сенің қасыңдамын.<br />
+      Қасыңда мәңгі сүйген адамың,<br />
+      болуға әрқашан дайынмын.<br />
+      <strong>Менің махаббатым ❤️</strong>
+    </p>
+
+    <video controls width="100%" style="border-radius: 12px; margin-top: 20px;">
+      <source src="guitar.mp4" type="video/mp4" />
+      Видео жүктелмеді.
+    </video>
+
+    <h2>Сүйіктімнің копилкасы ❤️</h2>
+    <div class="slideshow">
+      <img src="5364259006056621330.jpg" class="active" alt="Фото 1">
+      <img src="5375592789095605446.jpg" alt="Фото 2">
+      <img src="5400092833035182347.jpg" alt="Фото 3">
+      <img src="5413476986216638847.jpg" alt="Фото 4">
+      <img src="5415929507031936983.jpg" alt="Фото 5">
+      <img src="5194922335499576327.jpg" alt="Фото 6">
+      <img src="5204258378925338603.jpg" alt="Фото 7">
+      <img src="5330567229592430053.jpg" alt="Фото 8">
+      <img src="5359393748708092316.jpg" alt="Фото 9">
+      <img src="5359393748708092315.jpg" alt="Фото 10">
+      <img src="5253833361061965410.jpg" alt="Фото 11">
+      <img src="5253833361061965409.jpg" alt="Фото 12">
+      <img src="5253833361061965408.jpg" alt="Фото 13">
+      <img src="5253833361061965407.jpg" alt="Фото 14">
+      <img src="5253833361061965405.jpg" alt="Фото 15">
+      <img src="5253833361061965404.jpg" alt="Фото 16">
+      <img src="5253833361061965403.jpg" alt="Фото 17">
+      <img src="5318788225948580766.jpg" alt="Фото 18">
+      <img src="5318788225948580765.jpg" alt="Фото 19">
+      <img src="5318788225948580764.jpg" alt="Фото 20">
+      <img src="5318947955782318091.jpg" alt="Фото 21">
+      <img src="5318788225948580763.jpg" alt="Фото 22">
+      <img src="5319014617969718614.jpg" alt="Фото 23">
+      <img src="5318788225948580762.jpg" alt="Фото 24">
+      <img src="5318788225948580761.jpg" alt="Фото 25">
+      <img src="5318788225948580760.jpg" alt="Фото 26">
+      <img src="5318788225948580759.jpg" alt="Фото 27">
+    </div>
+  </div>
+
+  <div id="firework-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.10.0/dist/index.umd.js"></script>
+  <script>
+    const container = document.getElementById('firework-container');
+    const fireworks = new Fireworks.default(container, {
+      hue: { min: 0, max: 360 },
+      delay: { min: 15, max: 30 },
+      speed: 2,
+      acceleration: 1.05,
+      friction: 0.97,
+      gravity: 1.5,
+      particles: 100,
+      trace: 3,
+      explosion: 5,
+      autoresize: true,
+      brightness: { min: 50, max: 80 },
+      boundaries: {
+        top: 0,
+        bottom: container.clientHeight,
+        left: 0,
+        right: container.clientWidth
+      }
+    });
+    fireworks.start();
+  </script>
+
+  <script>
+    const slides = document.querySelectorAll('.slideshow img');
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 3000);
+  </script>
+</body>
+</html>
